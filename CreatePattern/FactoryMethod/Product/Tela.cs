@@ -11,6 +11,6 @@ public abstract class Tela
         Message = msg;
     }
 
-    public string GetName()
-        => Nome;
+    public string GetMessage()
+        => Message;
 }
