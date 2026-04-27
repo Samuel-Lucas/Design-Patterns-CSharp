@@ -2,5 +2,6 @@ namespace PrototypePattern.Interfaces;
 
 public interface IEnemyPrototype
 {
-    Enemy Clone();
+    Enemy ShallowCopy();
+    Enemy DeepCopy();
 }
