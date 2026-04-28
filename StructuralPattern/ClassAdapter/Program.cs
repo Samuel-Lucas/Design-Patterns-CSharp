@@ -1,26 +1,36 @@
-﻿using ClassAdapter.Libs;
+﻿using ClassAdapter.Adapters;
+using ClassAdapter.Adapters.Interfaces;
 
 Console.Write("Type the file which you want to execute: ");
-string file = Console.ReadLine();
+string file = Console.ReadLine()!;
+
+if (!file.Contains(".") || string.IsNullOrEmpty(file.Trim()))
+{
+    Console.WriteLine("File format is incompatible !");
+    return;
+} 
 
 var splittedFile = file!.Split(".");
 
-switch (splittedFile[1])
+IPlayer player;
+
+switch (splittedFile![1])
 {
     case "mp3":
     {
-        Mp3Player mp3Player = new(file);
-        mp3Player.Run();
+        player = new Mp3PlayerAdapter();
+        player.Play(file!);
         break;
     }
     case "mp4":
     {
-        Mp4Player.Execute(file);
+        player = new Mp4PlayerAdapter();
+        player.Play(file!);
         break;
     }
     default:
     {
-        Console.WriteLine("File is incompatible !");
+        Console.WriteLine("File format is incompatible !");
         break;
     }
 }
