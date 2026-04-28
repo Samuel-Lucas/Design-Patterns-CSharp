@@ -10,6 +10,6 @@ public class Mp3Player
 
     public void Run()
     {
-        Console.WriteLine($"Executing archive MP3: {File}");
+        Console.WriteLine($"Executing file MP3: {File}");
     }
 }
