@@ -30,3 +30,44 @@ The idea is to define:
  - Abstract factory interface
  - Concrete factories
 ---
+
+🧩 Pattern Name
+Builder
+📖 What is it?
+The Builder pattern is a creational design pattern that lets you construct complex objects step by step, separating the construction process from the final representation.
+In simple terms: it allows you to build an object gradually, controlling each part of its creation, instead of using a large and confusing constructor.
+---
+
+🎯 When to use?
+Use Builder when:
+An object has many optional parameters
+You want to avoid telescoping constructors (constructors with too many arguments)
+The construction process needs to follow specific steps or order
+You need to create different representations of the same object
+You want more readable and maintainable object creation
+Practical scenarios:
+Creating complex configuration objects
+Building SQL queries dynamically
+Constructing UI components step by step
+Creating immutable objects with many fields
+Generating documents (HTML, JSON, reports)
+---
+
+🚫 When not to use?
+Avoid Builder when:
+The object is simple and has few parameters
+A constructor or object initializer is already clear enough
+The added abstraction would make the code unnecessarily complex
+There is no need for step-by-step construction
+
+---
+🧠 How does it work?
+The Builder pattern separates the construction logic into distinct roles:
+Builder Interface
+Defines the steps required to build the object.
+Concrete Builder
+Implements those steps and keeps track of the object being built.
+Product
+The final object that is being constructed.
+Director (optional)
+Controls the order of building steps. It defines how to build a specific version of the object.
