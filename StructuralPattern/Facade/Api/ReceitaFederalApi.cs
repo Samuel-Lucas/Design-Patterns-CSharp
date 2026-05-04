@@ -4,7 +4,6 @@ public class ReceitaFederalApi
 {
     public bool isCpfActive(string cpf)
     {
-        Random random = new Random();
-        return Boolean.Parse(random.Next(0, 1).ToString());
+        return Random.Shared.Next(2) == 1;
     }
 }
