@@ -1,15 +1,6 @@
-﻿using Facade.Api;
+﻿using Facade;
 
-DetranApi detran = new();
-SerasaApi serasa = new();
-ReceitaFederalApi receita = new();
+ClientScoreFacade clientScoreFacade = new();
+var result = clientScoreFacade.Score("12345678901", "2345");
 
-var cpf = "12345678901";
-var cnhValida = detran.ValidCNH("12343215678");
-var scoreSerasa = serasa.Score(cpf);
-var activecPF = receita.isCpfActive(cpf);
-
-var score = 0;
-
-
-Console.WriteLine($"Client score is {score}");
+Console.WriteLine($"Client score is {Math.Round(result)}");
