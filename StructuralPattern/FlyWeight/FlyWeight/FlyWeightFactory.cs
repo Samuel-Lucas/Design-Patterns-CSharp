@@ -34,7 +34,7 @@ public class FlyWeightFactory
 
     // Returns an existing Flyweight with a given state or creates a new one.
 
-    public FlyWeightClass GetFlyweight (Car sharedState)
+    public FlyWeightClass GetFlyweight(Car sharedState)
     {
         string key = this.getKey(sharedState);
         if (flyWeights.Where(t=> t.Item2== key).Count() == 0)
@@ -47,7 +47,7 @@ public class FlyWeightFactory
             Console.WriteLine("FlyweightFactory: Reusing existing flyweight.");
         }
         
-        return flyWeights.FirstOrDefault(t => t.Item2 == key).Item1;
+        return flyWeights.FirstOrDefault(t => t.Item2 == key)!.Item1;
     }
 
 
