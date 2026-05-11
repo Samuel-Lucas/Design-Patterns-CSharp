@@ -17,7 +17,7 @@ public class Configuration : IConfiguration
 
     public void SetConfig(string key, string value)
     {
-        Console.WriteLine($"key {key} setted with value {value}");
+        Console.WriteLine($"key {key}:{value} setted succesfully");
     }
 
     public void Update()
