@@ -3,11 +3,11 @@ using TemplateMethod.Template;
 
 namespace TemplateMethod.Sorters;
 
-public class TitleSorter : SorterTemplate
+public class RatingSorter : SorterTemplate
 {
     public override bool IsFirst(Movie movie1, Movie movie2)
     {
-        if (movie1.Title.CompareTo(movie2.Title) <= 0)
+        if (movie2.Rating < movie1.Rating)
             return true;
         
         return false;

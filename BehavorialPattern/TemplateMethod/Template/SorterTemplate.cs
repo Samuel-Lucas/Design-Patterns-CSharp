@@ -10,7 +10,7 @@ public abstract class SorterTemplate
     {
         for (int i = 0; i < movieList.Count; i++)
         {
-            for (int j = i + 1; i < movieList.Count; j++)
+            for (int j = i + 1; j < movieList.Count; j++)
             {
                 if (!IsFirst(movieList[i], movieList[j]))
                 {
