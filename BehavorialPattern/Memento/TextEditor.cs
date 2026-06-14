@@ -20,6 +20,7 @@ public class TextEditor : IOriginator
     public void Write(string newText)
     {
         Console.WriteLine("Writing: " + newText);
+        text = newText;
     }
 
     public void Restore(ConcreteMemento memento)
